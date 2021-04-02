@@ -15,7 +15,7 @@ def users(request):
     users = User.objects.all().order_by('-id')
     serializer = UsersSerializer(users, many=True)
     return Response(serializer.data)
-    
+     
 @login_required(login_url='account:signin')
 @api_view(['GET'])
 def user(request, pk):
